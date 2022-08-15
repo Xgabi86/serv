@@ -1,3 +1,2 @@
-on command "text":
-    cancel event
+command /text [<text>]:
     send "&dJe sucehite l'air !"
