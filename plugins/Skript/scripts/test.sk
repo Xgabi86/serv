@@ -1,2 +1,3 @@
-on join:
-    send "&c ta mere la pute" to player
+on command "text":
+    cancel event
+    send "&dJe sucehite l'air !"
