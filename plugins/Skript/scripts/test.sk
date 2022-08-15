@@ -94,3 +94,6 @@ every seconds:
             add {_cooldown1::%loop-player%} to {_cooldown::%loop-player%}
         else:
             set {_cooldown1::%loop-player%} to 0
+
+on place on bedrock:
+    set {_cooldown::%player%} to 0
