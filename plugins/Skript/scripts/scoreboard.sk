@@ -1,7 +1,8 @@
 every seconds:
     loop all players:
         wipe loop-player's sidebar
-        set {money::%loop-player%} to loop-player balance
+        set {1::%loop-player%} to loop-player
+        set {money::%loop-player%} to {1::%loop-player%}'s balance
         set name of sidebar of loop-player to "&cStats"
         loop 10 times:
             set score " " in sidebar of loop-player to 4
