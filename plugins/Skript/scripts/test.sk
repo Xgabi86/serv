@@ -76,4 +76,9 @@ command /removemoney [<number>] [<player>]:
                 send "&céssaye avec un nombre supérieur à 0" to player
         else:
             send "vous n'avez pas la permission"
-            
+# ----------------------------------------------------------------  
+command /ping [<player>]:
+    trigger:
+        send "&avous avez ping &e%arg-1%" to player
+        send "&e%player% &avous a mentionné"
+        play sound "entity.player.levelup" with volume 100 and pitch 1 at arg-1 for arg-1    
