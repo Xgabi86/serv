@@ -2,8 +2,8 @@ command /text [<text>]:
     trigger:
         send "&dJe sucehite l'air !" to player
 
+# ----------------------------------------------
 
-
-
-
-
+command /text1 [<text>]:
+    trigger:
+        send "%arg-1%" to player
