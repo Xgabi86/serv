@@ -1,6 +1,7 @@
 every seconds:
     loop all players:
         wipe loop-player's sidebar
+        set {players.online} to loop-player
         set name of sidebar of loop-player to "&cStats"
         loop 10 times:
             set score " " in sidebar of loop-player to 4
