@@ -10,3 +10,11 @@ command /text1 [<text>]:
 
 # ----------------------------------------------
 
+command...
+    trigger:
+        if ... = "on":
+            send "..." to ...
+        else if arg-1 = "...":
+            send "..." to player
+        else:
+            send "..." to ...
