@@ -18,3 +18,18 @@ command /text2 [<text>]:
             send "&coff" to player
         else:
             send "try &aonér or &coff" to player
+
+# ----------------------------------------------------------------
+
+command /text3...
+    trigger:
+        if ... = "on":
+            send "&aon" to player
+            set {test} to "..."
+        else if ... = "off":
+            send "&coff" to player
+            set {test} to "..."
+        else if ... = "info":
+            send "%...%" to player
+        else:
+            send "try &aon&r or &coff" to player
