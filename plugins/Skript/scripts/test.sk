@@ -80,5 +80,6 @@ command /removemoney [<number>] [<player>]:
 command /ping [<player>]:
     trigger:
         send "&avous avez ping &e%arg-1%" to player
-        send "&e%player% &avous a mentionné"
-        play sound "entity.player.levelup" with volume 100 and pitch 1 at arg-1 for arg-1    
+        send "&e%player% &avous a mentionné" to arg-1
+        play sound "entity.player.levelup" with volume 100 and pitch 1 at arg-1 for arg-1  
+        set action bar of arg-1 to "&e%player% &avous a mentionné"  
