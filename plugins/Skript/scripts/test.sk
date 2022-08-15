@@ -33,3 +33,8 @@ command /text3 [<text>] :
             send "%{test}%" to player
         else:
             send "try &aon&r or &coff" to player
+
+# ----------------------------------------------------------------
+
+on break off ...:
+    add ... to ...'s balance
