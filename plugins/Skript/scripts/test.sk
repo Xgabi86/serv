@@ -50,7 +50,7 @@ on break of pumpkin:
 
 command /givememoney [<number>] [<player>]: 
     trigger:
-        if player has permision "server.ops":
+        if player has permission "server.ops":
             if arg-2 is player:
                 if arg-1 > 0:
                     set {arg-1} to arg-1
@@ -61,18 +61,25 @@ command /givememoney [<number>] [<player>]:
                     send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player
             else:
                 send "&cargument 2 doit être un joueur" to player
-        else: 
+        else:
             send "vous n'avez pas la permision" to player
 # ----------------------------------------------------------------
-command /substractmoney [<number>] [<player>]:
+command /removemoney [<number>] [<player>]:
     trigger:
-        if arg-1 > 0:  
-            set {arg-1} to arg-1
-            set {money} to player's balance - {arg-1}
-            if {money} > 0:
-                set player's balance to {money}
-                send "&etu viens de perdre %arg-1%$" to player 
+        if player has permission "server.ops":
+            if arg-2 is player
+                if arg-1 > 0:  
+                    set {arg-1} to arg-1
+                    set {money} to player's balance - {arg-1}
+                    if {money} > 0:
+                        set arg-2's balance to {money}
+                        send "&etu viens de perdre %arg-1%$" to player 
+                    else:
+                        send  "&cvous n'avez pas assez d'argent" to player
+                else:
+                    send "&céssaye avec un nombre supérieur à 0" to player
             else:
-                send  "&cvous n'avez pas assez d'argent" to player
+                send "&cargument 2 doit être un joueur" to player
         else:
-            send "&céssaye avec un nombre supérieur à 0" to player
+            send "vous n'avez pas la permission"
+            
