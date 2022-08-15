@@ -55,4 +55,17 @@ command /givememoney [<number>]:
             add {arg-1} to balance of player
             send "&etu viens de resevoir %arg-1%$" to player
         else:
-            send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" 
+            send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player 
+# ----------------------------------------------------------------
+command /substractmoney ¨[<number>]:
+    trigger:
+        if arg-1 > 0:  
+            set {arg-1} to arg-1
+            set {money} to balance of player - arg-1
+            if money > 0: 
+                add {money} to balance of player
+                send "&etu viens de perdre %arg-1%$" to player
+            else:
+                send "&ctu ne possède pas assez d'argent pour faire cette action" 
+        else:
+            send "&céssaye avec un nombre supérieur à 0" to player
