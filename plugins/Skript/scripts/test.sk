@@ -48,16 +48,23 @@ on break of pumpkin:
 
 # ----------------------------------------------------------------
 
-command /givememoney [<number>]: 
+command /givememoney [<number>] [<player>]: 
     trigger:
-        if arg-1 > 0:
-            set {arg-1} to arg-1
-            add {arg-1} to balance of player
-            send "&etu viens de resevoir %arg-1%$" to player
-        else:
-            send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player 
+        if player has permision "server.ops":
+            if arg-2 is player:
+                if arg-1 > 0:
+                    set {arg-1} to arg-1
+                    add {arg-1} to balance of arg-2
+                    send "&etu viens de resevoir %arg-1%$" to arg-2
+                    send "&a%arg-2% vient de resevoir &e&l%arg-1%$" to player
+                else:
+                    send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player
+            else:
+                send "&cargument 2 doit être un joueur" to player
+        else: 
+            send "vous n'avez pas la permision" to player
 # ----------------------------------------------------------------
-command /substractmoney [<number>]:
+command /substractmoney [<number>] [<player>]:
     trigger:
         if arg-1 > 0:  
             set {arg-1} to arg-1
