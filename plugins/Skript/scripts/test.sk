@@ -10,11 +10,11 @@ command /text1 [<text>]:
 
 # ----------------------------------------------
 
-command...
+command /text2 [<text>]:
     trigger:
-        if ... = "on":
-            send "..." to ...
-        else if arg-1 = "...":
-            send "..." to player
+        if arg-1 = "on":
+            send "&aon" to player
+        else if arg-1 = "off":
+            send "&coff" to player
         else:
-            send "..." to ...
+            send "try &aonér or &coff" to player
