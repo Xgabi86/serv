@@ -1,2 +1,2 @@
 on join:
-    send "&ta mere la pute" to player
+    send "&c ta mere la pute" to player
