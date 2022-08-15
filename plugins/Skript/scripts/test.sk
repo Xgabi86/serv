@@ -1,2 +1,9 @@
 command /text [<text>]:
-    send "&dJe sucehite l'air !"
+    trigger:
+        send "&dJe sucehite l'air !" to player
+
+
+
+
+
+
