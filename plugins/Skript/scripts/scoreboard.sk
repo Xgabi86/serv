@@ -1,15 +1,12 @@
 every seconds:
     loop all players:
         wipe loop-player's sidebar
-        set {money::%player%} to loop-player's balance
+        set {money::%loop-player%} to loop-player's balance
         set name of sidebar of loop-player to "&cStats"
         loop 10 times:
             set score " " in sidebar of loop-player to 4
-            set score "&eMoney: &l%{money::%player%}%$" in sidebar of loop-player to 3
+            set score "&eMoney: &l%{money::%loop-player's%}%$" in sidebar of loop-player to 3
             set score "&cPlayer: &l%{players.online}%" in sidebar of loop-player to 1
 
 on join:
-    add 1 to {players.online}
-
-on left:
-    set {players.online} to {players.online} - 1
+    set {players.online} to number of all players
