@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 90.78.97.142
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1660250265728
+  login: 1660250123784
+money: '0'
+last-account-name: gabi_86
+logoutlocation:
+  world: da4957fe-1132-410f-81df-35e770a30c27
+  world-name: world
+  x: 48.828917057739254
+  y: 99.76223237952533
+  z: -116.4946786286257
+  yaw: 58.559600830078125
+  pitch: 44.05532455444336
