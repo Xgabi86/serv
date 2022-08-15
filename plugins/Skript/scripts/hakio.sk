@@ -4,3 +4,10 @@ command /playerinfo:
         set {username} to player's name
         send "&eNom : %{username}%"
         send "&eNom : %{money1}%" 
+
+ # ----------------------------------------------------------------
+
+on command "sk reload":
+    broadcast "Skripts a été reload"
+    
+
