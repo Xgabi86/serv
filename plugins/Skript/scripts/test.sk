@@ -62,7 +62,7 @@ command /substractmoney [<number>]:
         if arg-1 > 0:  
             set {arg-1} to arg-1
             set {money} to balance of player - arg-1
-            if money > 0: 
+            if {money} > 0: 
                 add {money} to balance of player
                 send "&etu viens de perdre %arg-1%$" to player
             else:
