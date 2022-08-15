@@ -7,3 +7,6 @@ command /text [<text>]:
 command /text1 [<text>]:
     trigger:
         send "%arg-1%" to player
+
+# ----------------------------------------------
+
