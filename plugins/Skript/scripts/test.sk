@@ -51,7 +51,7 @@ on break of pumpkin:
 command /givememoney [<number>] [<player>]: 
     trigger:
         if player has permission "server.ops":
-            if arg-2 is player:
+            if arg-2 is player's:
                 if arg-1 > 0:
                     set {arg-1} to arg-1
                     add {arg-1} to balance of arg-2
@@ -67,7 +67,7 @@ command /givememoney [<number>] [<player>]:
 command /removemoney [<number>] [<player>]:
     trigger:
         if player has permission "server.ops":
-            if arg-2 is player:
+            if arg-2 is player's:
                 if arg-1 > 0:  
                     set {arg-1} to arg-1
                     set {money} to player's balance - {arg-1}
