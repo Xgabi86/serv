@@ -48,7 +48,7 @@ on break of pumpkin:
 
 # ----------------------------------------------------------------
 
-command /givememoney [<number>]:
+command /givememoney [<number>] [<player name>]: 
     trigger:
         if arg-1 > 0:
             set {arg-1} to arg-1
@@ -57,7 +57,7 @@ command /givememoney [<number>]:
         else:
             send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player 
 # ----------------------------------------------------------------
-command /substractmoney ¨[<number>]:
+command /substractmoney [<number>] [<player name>]:
     trigger:
         if arg-1 > 0:  
             set {arg-1} to arg-1
