@@ -51,35 +51,29 @@ on break of pumpkin:
 command /givememoney [<number>] [<player>]: 
     trigger:
         if player has permission "server.ops":
-            if arg-2 is players:
-                if arg-1 > 0:
-                    set {arg-1} to arg-1
-                    add {arg-1} to balance of arg-2
-                    send "&etu viens de resevoir %arg-1%$" to arg-2
-                    send "&a%arg-2% vient de resevoir &e&l%arg-1%$" to player
-                else:
-                    send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player
+            if arg-1 > 0:
+                set {arg-1} to arg-1
+                add {arg-1} to balance of arg-2
+                send "&etu viens de resevoir %arg-1%$" to arg-2
+                send "&a%arg-2% vient de resevoir &e&l%arg-1%$" to player
             else:
-                send "&cargument 2 doit être un joueur" to player
+                send "&céssaye avec un nombre supérieur à 0 merci petit enculé!!!" to player
         else:
             send "vous n'avez pas la permision" to player
 # ----------------------------------------------------------------
 command /removemoney [<number>] [<player>]:
     trigger:
         if player has permission "server.ops":
-            if arg-2 is players:
-                if arg-1 > 0:  
-                    set {arg-1} to arg-1
-                    set {money} to player's balance - {arg-1}
-                    if {money} > 0:
-                        set arg-2's balance to {money}
-                        send "&etu viens de perdre %arg-1%$" to player 
-                    else:
-                        send  "&cvous n'avez pas assez d'argent" to player
+            if arg-1 > 0:  
+                set {arg-1} to arg-1
+                set {money} to player's balance - {arg-1}
+                if {money} > 0:
+                    set arg-2's balance to {money}
+                    send "&etu viens de perdre %arg-1%$" to player 
                 else:
-                    send "&céssaye avec un nombre supérieur à 0" to player
+                    send  "&cvous n'avez pas assez d'argent" to player
             else:
-                send "&cargument 2 doit être un joueur" to player
+                send "&céssaye avec un nombre supérieur à 0" to player
         else:
             send "vous n'avez pas la permission"
             
