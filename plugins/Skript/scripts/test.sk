@@ -39,3 +39,8 @@ command /text3 [<text>] :
 on break off pumpkin :
     add 1 to player's balance
     send "&aTu as gagné 1 dollars en cassant une citrouille" to player
+    if {block} >= ...:
+        send "&aTu as gagné 10 dollars en cassant une citrouille" to ...
+        set {...} to 0
+    else:
+        add ... to {block}
