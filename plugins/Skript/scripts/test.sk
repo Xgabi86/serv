@@ -1,0 +1,2 @@
+on join:
+    send "&ta mere la pute" to player
