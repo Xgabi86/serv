@@ -79,15 +79,16 @@ command /removemoney [<number>] [<player>]:
 # ----------------------------------------------------------------  
 command /ping [<player>]:
     trigger:
-        if {cooldown::%player%} =< 0:
+        if {_cooldown::%player%} = 0:
             send "&avous avez ping &e%arg-1%" to player
             send "&e%player% &avous a mentionné" to arg-1
             play sound "entity.player.levelup" with volume 100 and pitch 1 at arg-1 for arg-1  
             set action bar of arg-1 to "&e%player% &avous a mentionné"
         else:
-            send "&cveillez attendre %{cooldown::%player%}% secondes"      
+            send "&cveillez attendre %{_cooldown::%player%}% secondes"      
 
 every seconds:
     loop all players:
-        if {cooldown::%loop-player%} > 0:
-            remove 1 to {cooldown::%loop-player%}
+        if {_cooldown::%loop-player%} > 0:
+            set {_cooldown1::%loop-player%} to {_cooldown::%loop-player%} - 1 
+            add {_cooldown1::%loop-player%} to {_cooldown::%loop-player%}
