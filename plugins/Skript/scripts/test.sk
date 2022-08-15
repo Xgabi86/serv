@@ -61,10 +61,9 @@ command /substractmoney [<number>]:
     trigger:
         if arg-1 > 0:  
             set {arg-1} to arg-1
-            set {money} to balance of player - arg-1
-            if {money} > 0: 
-                add {money} to balance of player
+            remove {arg-1} to balance of player
                 send "&etu viens de perdre %arg-1%$" to player
+            if balance of player = 0:
             else:
                 send "&ctu ne possède pas assez d'argent pour faire cette action" 
         else:
