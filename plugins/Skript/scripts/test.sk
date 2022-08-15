@@ -92,3 +92,5 @@ every seconds:
         if {_cooldown::%loop-player%} > 0:
             set {_cooldown1::%loop-player%} to {_cooldown::%loop-player%} - 1 
             add {_cooldown1::%loop-player%} to {_cooldown::%loop-player%}
+        else:
+            set {_cooldown1::%loop-player%} to 0
