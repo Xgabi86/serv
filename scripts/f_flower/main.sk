@@ -3,7 +3,7 @@ command /giveflowers:
     permission message:&9tu n'as pas la permission
     trigger:
         give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
-        give player azalea leaves named "&2Flower Plant" with custom medel data 1001
+        give player azalea leaves named "&2Flower Plant" with custom model data 1001
 
 
 on place of small amethyst bud:
