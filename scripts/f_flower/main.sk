@@ -46,3 +46,6 @@ on break of azalea leaves or flowering azalea leaves:
         set event-block to air
         wait 1 tick
         drop azalea leaves named "&2Flower Plant" with custom model data 1001 at event-block
+
+every seconds:
+    set block at {flower::*} to flowering azalea leaves
