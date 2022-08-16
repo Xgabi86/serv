@@ -22,7 +22,8 @@ on rightclick on flowering azalea leaves:
     set {_time} to "%{_time}% seconds" parsed as timespan
     wait 1 tick
     wait {_time}
-    set block at event-block to flowering azalea leaves
+    if block at event-block is azalea leaves:
+        set block at event-block to flowering azalea leaves
 
 
 on place of azalea leaves:
@@ -31,4 +32,5 @@ on place of azalea leaves:
     set {_time} to "%{_time}% seconds" parsed as timespan
     wait 1 tick
     wait {_time}
-    set block at event-block to flowering azalea leaves
+    if block at event-block is azalea leaves:
+        set block at event-block to flowering azalea leaves
