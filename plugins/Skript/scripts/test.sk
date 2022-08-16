@@ -83,7 +83,6 @@ command /ping [<player>]:
             set {time.ref.%player%} to now
             stop
         set {_cooldown.%player%} to difference between {time.ref.%player%} and now
-        set {_cd.%player%} to 40 - {_cooldown.%player%}
         if {_cooldown.%player%} >= 40 seconds:
             send "&aVous avez ping &e%arg-1%&a." to player
             send "&e%player% &avous a mentionné !" to arg-1
@@ -92,7 +91,7 @@ command /ping [<player>]:
             set {time.ref.%player%} to now
             stop
         if {_cooldown.%player%} < 40 seconds:
-            send "&7Veuiller attendre &e%{_cd.%player%}% &7secondes."
+            send "&7Veuiller attendre &e%{time.ref.%player%}% &7secondes."
             stop
 
 # ----------------------------------------------------------------
