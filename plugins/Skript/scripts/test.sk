@@ -87,7 +87,7 @@ command /ping [<player>]:
         else:
             send "&cveillez attendre %{_cooldown::%player%}% secondes"      
 
-every seconds:
+20 seconds:
     loop all players:
         if {_cooldown::%loop-player%} > 0:
             set {_cooldown1::%loop-player%} to {_cooldown::%loop-player%} - 1 
