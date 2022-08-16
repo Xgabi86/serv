@@ -83,14 +83,14 @@ command /ping [<player>]:
             set {time.ref.%player%} to now
             stop
         set {_cooldown.%player%} to difference between {time.ref.%player%} and now
-        else if {_cooldown.%player%} >= 40 seconds:
+        if {_cooldown.%player%} >= 40 seconds:
             send "&avous avez ping &e%arg-1%" to player
             send "&e%player% &avous a mentionné" to arg-1
             play sound "entity.player.levelup" with volume 100 and pitch 1 at arg-1 for arg-1  
             set action bar of arg-1 to "&e%player% &avous a mentionné"
             set {time.ref.%player%} to now
             stop
-        else if {_cooldown.%player%} < 40 seconds:
+        if {_cooldown.%player%} < 40 seconds:
             send "&7Seulement &a%{_cooldown.%player%}% sont passées."
             stop
 
