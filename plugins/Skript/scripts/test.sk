@@ -90,9 +90,9 @@ command /ping [<player>]:
             set action bar of arg-1 to "&e%player% &avous a mentionné"
             set {time.ref.%player%} to now
             stop
+        set {_cd.%player%} to {_cooldown.%player%}
         if {_cooldown.%player%} < 40 seconds:
-            set {_cd.%player%} to {_cooldown.%player%}
-            remove 40 from {_cd.%player%}
+            set {_cd.%player%} to 40 - {_cooldown.%player%}
             send "&7Veuiller attendre &e%{cd.%player%}% &7secondes."
             stop
 
