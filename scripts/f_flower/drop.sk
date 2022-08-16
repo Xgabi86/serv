@@ -1,8 +1,5 @@
-on break of tnt:
-    send "1" to player
+on break of grass:
     set {_random} to random integer between 1 and 15
     wait 1 tick
-    send "2        %{_random}%"
     if {_random} = 1:
-        send "3" to player
         drop white tulip named "&2Flower Plant" with custom model data 1001 at event-block
