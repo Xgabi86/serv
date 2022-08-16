@@ -98,3 +98,6 @@ every seconds:
 on place of bedrock:
     set {_cooldown::%player%} to 0
 # ----------------------------------------------------------------
+on join:
+    send "&csalut voyageur bien venu sur le serveur " to player
+# ----------------------------------------------------------------
