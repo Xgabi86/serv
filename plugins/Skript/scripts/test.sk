@@ -87,7 +87,7 @@ command /ping [<player>]:
         else:
             send "&cveillez attendre %{_cooldown::%player%}% secondes"      
 
-20 seconds:
+every seconds:
     loop all players:
         if {_cooldown::%loop-player%} > 0:
             set {_cooldown1::%loop-player%} to {_cooldown::%loop-player%} - 1 
@@ -97,3 +97,10 @@ command /ping [<player>]:
 
 on place of bedrock:
     set {_cooldown::%player%} to 0
+# ----------------------------------------------------------------
+on place of sign:
+    if to write [<number>] [<item>] to the sing
+        set click left on the sing
+        add %item%
+        set {money} to player's balance - {arg-1}
+        
