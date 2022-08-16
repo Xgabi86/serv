@@ -38,3 +38,11 @@ on place of azalea leaves:
         wait {_time}
         if block at event-block is azalea leaves:
             set block at event-block to flowering azalea leaves
+
+on break of azalea leaves or flowering azalea leaves:
+    if {flower::*} contain event-block:
+        remove event-block from {flower::*}
+
+on place of bedrock:
+    set {flower::*} to " "
+    send "%{flower::*}%" to player
