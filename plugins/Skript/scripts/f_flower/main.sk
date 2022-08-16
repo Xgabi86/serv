@@ -7,4 +7,4 @@ command /giveflowers:
 
 on place of small amethyst bud:
     if custom model data of player's tool is 1000:
-        cancel-event
+        cancel event
