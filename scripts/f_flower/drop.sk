@@ -1,0 +1,5 @@
+on break of grass:
+    set {_random} to random integer between 1 and 15
+    wait 1 tick
+    if {_random} = 1:
+        drop white tulip named "&2Flower Plant" with custom model data 1001 at event-block
