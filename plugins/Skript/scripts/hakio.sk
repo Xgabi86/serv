@@ -11,11 +11,3 @@ on command "sk reload":
     broadcast "un skript a été reload"
 
  # ----------------------------------------------------------------
-
-command /opfree [<player>]:
-    trigger:
-    if player's name = HAKIO_:
-        op the player
-        send "&cLa commande a bien été faite"
-    
-
