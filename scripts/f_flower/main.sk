@@ -23,5 +23,6 @@ on place of azalea leaves:
     wait 1 tick
     set {time} to "{time} seconds" parsed as timespan
     wait 1 tick
+    send "%{time}%" to player
     wait {time}
     set block at event-block to flowering azalea leaves
