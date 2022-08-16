@@ -8,6 +8,6 @@ command /playerinfo:
  # ----------------------------------------------------------------
 
 on command "sk reload":
-    broadcast "Skripts a été reload"
+    broadcast "%Skript name% a été reload"
     
 
