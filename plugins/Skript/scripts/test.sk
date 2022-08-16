@@ -98,9 +98,5 @@ every seconds:
 on place of bedrock:
     set {_cooldown::%player%} to 0
 # ----------------------------------------------------------------
-on place of sign:
-    if write on the sing {number} {items} 
-        set click left on the sing
-        add {items} to player
-        set {money} to player's balance - {number}
+
         
