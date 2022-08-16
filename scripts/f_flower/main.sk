@@ -16,6 +16,13 @@ on rightclick on flowering azalea leaves:
     play sound "block.flowering_azalea.break" with volume 100 and pitch 1 at player for player
     wait 1 tick
     play sound "block.flowering_azalea.hit" with volume 100 and pitch 1 at player for player
+    wait 1 tick
+    set {_time} to a random integer between 1 and 10
+    wait 1 tick
+    set {_time} to "%{_time}% seconds" parsed as timespan
+    wait 1 tick
+    wait {_time}
+    set block at event-block to flowering azalea leaves
 
 
 on place of azalea leaves:
@@ -23,7 +30,5 @@ on place of azalea leaves:
     wait 1 tick
     set {_time} to "%{_time}% seconds" parsed as timespan
     wait 1 tick
-    send "%{_time}%" to player
     wait {_time}
-    send "good" to player
     set block at event-block to flowering azalea leaves
