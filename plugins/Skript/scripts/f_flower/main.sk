@@ -1,3 +1,4 @@
 command /giveFflowers:
-    permission: server.ops    
+    permission: server.ops
+    permission message:&9tu n'as pas la permission    
     trigger:
