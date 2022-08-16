@@ -21,7 +21,7 @@ on rightclick on flowering azalea leaves:
 on place of azalea leaves:
     set {_time} to a random integer between 1 and 10
     wait 1 tick
-    set {_time} to {_time} seconds
+    set {_time} to "%{_time}% seconds" parsed as timespan
     wait 1 tick
     send "%{_time}%" to player
     wait {_time} seconds
