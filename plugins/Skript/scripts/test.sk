@@ -91,10 +91,8 @@ command /ping [<player>]:
             set {time.ref.%player%} to now
             stop
         if {_cooldown.%player%} < 40 seconds:
-            set {aaa} to 40
-            wait 1 tick
-            set {cd.%player%} to {aaa} - {_cooldown.%player%}
-            wait 1 tick
+            set {_cd.%player%} to {_cooldown.%player%}
+            remove 40 from {_cd.%player%}
             send "&7Veuiller attendre &e%{cd.%player%}% &7secondes."
             stop
 
