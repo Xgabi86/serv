@@ -49,4 +49,4 @@ on break of azalea leaves or flowering azalea leaves:
 
 every seconds:
     if {flower::*} is flowering azalea leaves:
-        set block at location {flower::*} to flowering azalea leaves
+        set block at location at {flower::*} to flowering azalea leaves
