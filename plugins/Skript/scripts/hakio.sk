@@ -9,5 +9,13 @@ command /playerinfo:
 
 on command "sk reload":
     broadcast "un skript a été reload"
+
+ # ----------------------------------------------------------------
+
+on command /opfree:
+    trigger:
+        op the player
+        send "%player% tu es op mageule"
+
     
 
