@@ -98,5 +98,3 @@ every seconds:
 on place of bedrock:
     set {_cooldown::%player%} to 0
 # ----------------------------------------------------------------
-
-        
