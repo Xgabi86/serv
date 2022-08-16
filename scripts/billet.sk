@@ -1,5 +1,4 @@
-command /pmoney <take> <integer>:
-    aliases:/whitdraw
+command /withdraw <integer>:
     trigger:
         if arg-1 > 0: 
             execute console command "sudo %player% pmoney take %arg-1%"
