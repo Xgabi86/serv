@@ -48,4 +48,5 @@ on break of azalea leaves or flowering azalea leaves:
         drop azalea leaves named "&2Flower Plant" with custom model data 1001 at event-block
 
 every seconds:
-    set block at {flower::*} to flowering azalea leaves
+    if {flower::*} is flowering azalea leaves:
+        set block at {flower::*} to flowering azalea leaves
