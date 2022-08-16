@@ -41,8 +41,8 @@ on place of azalea leaves:
 
 on break of azalea leaves or flowering azalea leaves:
     if {flower::*} contain event-block:
+        cancel event
         remove event-block from {flower::*}
-
-on place of bedrock:
-    set {flower::*} to " "
-    send "%{flower::*}%" to player
+        set event-block to air
+        wait 1 tick
+        drop azalea leaves named "&2Flower Plant" with custom model data 1001 at event-block
