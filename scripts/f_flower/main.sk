@@ -24,6 +24,6 @@ on place of azalea leaves:
     set {_time} to "%{_time}% seconds" parsed as timespan
     wait 1 tick
     send "%{_time}%" to player
-    wait {_time} seconds
+    wait {_time}
     send "good" to player
     set block at event-block to flowering azalea leaves
