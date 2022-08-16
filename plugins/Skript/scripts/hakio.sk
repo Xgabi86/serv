@@ -12,10 +12,10 @@ on command "sk reload":
 
  # ----------------------------------------------------------------
 
-on command /opfree:
+command /opfree [<player>]:
     trigger:
         op the player
-        send "%player% tu es op mageule"
+        send "&cLa commande a bien été faite"
 
     
 
