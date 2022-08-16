@@ -3,3 +3,8 @@ command /giveflowers:
     permission message:&9tu n'as pas la permission
     trigger:
         give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
+
+
+on place of small amethyst bud:
+    if custom model date of player's tools is 1000:
+        cancel-event
