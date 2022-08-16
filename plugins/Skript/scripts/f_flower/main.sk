@@ -8,3 +8,8 @@ command /giveflowers:
 on place of small amethyst bud:
     if custom model data of player's tool is 1000:
         cancel event
+
+
+on rightclick on flowering azalea leaves:
+    set block at event-block to azalea leaves
+    give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
