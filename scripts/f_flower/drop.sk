@@ -1,4 +1,4 @@
-on break of grass:
+on break of tnt:
     set {_random} to random integer between 1 and 15
     wait 1 tick
     if {_random} = 1:
