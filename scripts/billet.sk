@@ -1,6 +1,6 @@
 command /withdraw <integer>:
     trigger:
         if arg-1 > 0: 
-            make player command "pmoney take %arg-1%" 
+            make console command "pmoney take %arg-1%" 
             send "&evous avez créé un billet de &l%arg-1%&r&e$"
             play sound "entity.player.levelup" with volume 100 and pitch 1 at player for player 
