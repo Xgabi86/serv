@@ -21,5 +21,5 @@ on rightclick on flowering azalea leaves:
 on place of azalea leaves:
     set {_time} to a random integer between 1 and 10
     wait 0.5 tick
-    wait {_time} secondes
+    wait {_time} seconds
     set block at event-block to flowering azalea leaves
