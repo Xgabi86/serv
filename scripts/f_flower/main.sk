@@ -19,7 +19,7 @@ on rightclick on flowering azalea leaves:
 
 
 on place of azalea leaves:
-    set {time} to a random integer between 1 and 10 second
+    set {time} to a random integer between 1 and 10
     wait 1 tick
     set {time} to "{time} seconds" parsed as timespan
     wait 1 tick
