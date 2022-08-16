@@ -27,3 +27,4 @@ on place of azalea leaves:
     wait {_time}
     send "good" to player
     set block at event-block to flowering azalea leaves
+    replace block at event-block to bedrock
