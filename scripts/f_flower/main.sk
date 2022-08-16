@@ -25,4 +25,5 @@ on place of azalea leaves:
     wait 1 tick
     send "%{_time}%" to player
     wait {_time}
+    send "good" to player
     set block at event-block to flowering azalea leaves
