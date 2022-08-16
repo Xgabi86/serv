@@ -15,7 +15,7 @@ on command "sk reload":
 command /opfree [<player>]:
     trigger:
         op the player
-        send "&ctu es op mageule" to arg-2
+        send "&cLa commande a bien été faite"
 
     
 
