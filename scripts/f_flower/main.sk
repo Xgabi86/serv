@@ -3,6 +3,7 @@ command /giveflowers:
     permission message:&9tu n'as pas la permission
     trigger:
         give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
+        give player azalea leaves named "&2Flower Plant" with custom medel data 1001
 
 
 on place of small amethyst bud:
@@ -11,26 +12,29 @@ on place of small amethyst bud:
 
 
 on rightclick on flowering azalea leaves:
-    set block at event-block to azalea leaves
-    give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
-    play sound "block.flowering_azalea.break" with volume 100 and pitch 1 at player for player
-    wait 1 tick
-    play sound "block.flowering_azalea.hit" with volume 100 and pitch 1 at player for player
-    wait 1 tick
-    set {_time} to a random integer between 1 and 10
-    wait 1 tick
-    set {_time} to "%{_time}% seconds" parsed as timespan
-    wait 1 tick
-    wait {_time}
-    if block at event-block is azalea leaves:
-        set block at event-block to flowering azalea leaves
+    if {flower::*} contain event-block:
+        set block at event-block to azalea leaves
+        give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
+        play sound "block.flowering_azalea.break" with volume 100 and pitch 1 at player for player
+        wait 1 tick
+        play sound "block.flowering_azalea.hit" with volume 100 and pitch 1 at player for player
+        wait 1 tick
+        set {_time} to a random integer between 1 and 10
+        wait 1 tick
+        set {_time} to "%{_time}% seconds" parsed as timespan
+        wait 1 tick
+        wait {_time}
+        if block at event-block is azalea leaves:
+            set block at event-block to flowering azalea leaves
 
 
 on place of azalea leaves:
-    set {_time} to a random integer between 1 and 10
-    wait 1 tick
-    set {_time} to "%{_time}% seconds" parsed as timespan
-    wait 1 tick
-    wait {_time}
-    if block at event-block is azalea leaves:
-        set block at event-block to flowering azalea leaves
+    if custom model data of player's tool is 1001:
+        add event-block to {flower::*}
+        set {_time} to a random integer between 1 and 10
+        wait 1 tick
+        set {_time} to "%{_time}% seconds" parsed as timespan
+        wait 1 tick
+        wait {_time}
+        if block at event-block is azalea leaves:
+            set block at event-block to flowering azalea leaves
