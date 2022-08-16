@@ -13,3 +13,6 @@ on place of small amethyst bud:
 on rightclick on flowering azalea leaves:
     set block at event-block to azalea leaves
     give player small amethyst bud named "&dAzalea Flower" with custom model data 1000
+    play sound "block.flowering_azalea.break" with volume 100 and pitch 1 at player for player
+    wait 1 tick
+    play sound "block.flowering_azalea.hit" with volume 100 and pitch 1 at player for player
