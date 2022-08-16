@@ -99,8 +99,8 @@ on place of bedrock:
     set {_cooldown::%player%} to 0
 # ----------------------------------------------------------------
 on place of sign:
-    if to write [<number>] [<item>] to the sing
+    if write on the sing {number} {items} 
         set click left on the sing
-        add %item%
-        set {money} to player's balance - {arg-1}
+        add {items} to player
+        set {money} to player's balance - {number}
         
