@@ -1,4 +1,4 @@
-on break of small grass or tall grass:
+on break of minecraft:grass or minecraft:tall_grass:
     set {_random} to random integer between 1 and 15
     wait 1 tick
     if {_random} = 1:
