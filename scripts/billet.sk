@@ -1,6 +1,7 @@
-command /withdraw <integer>:
+command /pmoney <take> <integer>:
+    aliases:/whitdraw
     trigger:
         if arg-1 > 0: 
-            execute console command "pmoney take %arg-1% %player%"
+            execute console command "sudo %player% pmoney take %arg-1%"
             send "&evous avez créé un billet de &l%arg-1%&r&e$"
             play sound "entity.player.levelup" with volume 100 and pitch 1 at player for player 
