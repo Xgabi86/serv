@@ -1,2 +1,0 @@
-on drop:
-    broadcast "%event-item%"
