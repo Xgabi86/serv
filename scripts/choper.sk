@@ -1,3 +1,0 @@
-on break of log:
-    if block at block 1 up event-location is log:
-        break block at block 1 up event-location naturally using player's tool
