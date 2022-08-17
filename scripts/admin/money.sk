@@ -10,10 +10,10 @@ command /moneyadmin <text> <player> [<number>]:
                 send "Vous venez de donner &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
 
         if arg-1 is "remove":
-            if arg-3 > -1:  
+            if arg-3 > 0:  
                 set {arg-1} to arg-1
                 set {money} to player's balance - {arg-1}
-                if {money} > 0:
+                if {money} > -1:
                     set arg-2's balance to {money}
                     send "Le joueur &9%player% &rviens de vous retirer &e&l%arg-3%&r&e$&r." to arg-2
                     send "Vous venez de retirer &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
