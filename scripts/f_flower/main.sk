@@ -4,7 +4,7 @@ command /giveflowers:
     trigger:
         give player small amethyst bud named "&dFleur d'Azalea" with custom model data 1000
         give player white tulip named "&5Azalea Plant" with custom model data 1001
-        give player minecraft:jungle_leaves named "&2Bloc naturel" with custom model data 1002
+        give player jungle leaves named "&2Bloc naturel" with custom model data 1002
 
 
 on place of small amethyst bud:
