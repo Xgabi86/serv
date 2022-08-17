@@ -1,0 +1,28 @@
+command /moneyadmin <text> <player> <number>:
+    permission: server.ops
+    permission message:&9tu n'as pas la permission
+    trigger:
+        if arg-1 is "give":
+            if arg-3 > 0:
+                set {arg-1} to arg-1
+                add {arg-1} to arg-2's balance
+                send "Le joueur &9%player% &rviens de vous donné &e&l%arg-3%&r&e$&r." to arg-2
+                send "Vous venez de donner &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
+
+        if arg-1 is "remove":
+            if arg-1 > 0:  
+                set {arg-1} to arg-1
+                set {money} to player's balance - {arg-1}
+                if {money} > 0:
+                    set arg-2's balance to {money}
+                    send "Le joueur &9%player% &rviens de vous retirer &e&l%arg-3%&r&e$&r." to arg-2
+                    send "Vous venez de retirer &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
+                else:
+                    send  "&c%arg-2% n'as pas assez d'argent." to player
+            else:
+                send "&céssaye avec un nombre supérieur à 0." to player
+
+        if arg-1 is "reset":
+            set arg-2's balance to 0
+            send "Le joueur &9%player% &rviens de vous retirer toutes votre argent." to arg-2
+            send "Vous venez de retirer toutes l'argent de &9%arg-2%&r." to player

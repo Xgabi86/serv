@@ -1,0 +1,2 @@
+on first join:
+    send "&csalut voyageur bien venu sur le serveur " to player

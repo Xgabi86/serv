@@ -1,0 +1,2 @@
+on command "sk reload":
+    broadcast "un skript a été reload"
