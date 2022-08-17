@@ -3,7 +3,8 @@ command /giveflowers:
     permission message:&9tu n'as pas la permission
     trigger:
         give player small amethyst bud named "&dFleur d'Azalea" with custom model data 1000
-        give player white tulip named "&2Flower Plant" with custom model data 1001
+        give player white tulip named "&5Azalea Plant" with custom model data 1001
+        give player minecraft:jungle_leaves named "&2Bloc naturel" with custom model data 1002
 
 
 on place of small amethyst bud:
@@ -14,7 +15,7 @@ on place of small amethyst bud:
 on rightclick on pink tulip:
     if {flower::*} contain event-block:
         set block at event-block to white tulip
-        give player small amethyst bud named "&dFleur d'Azalea" with custom model data 1000
+        give player small amethyst bud named "&5Fleur d'Azalea" with custom model data 1000
         play sound "block.flowering_azalea.break" with volume 100 and pitch 1 at player for player
         wait 1 tick
         play sound "block.flowering_azalea.hit" with volume 100 and pitch 1 at player for player
