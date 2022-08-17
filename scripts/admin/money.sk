@@ -27,4 +27,4 @@ command /moneyadmin <text> <player> [<number>]:
             send "Le joueur &9%player% &rviens de vous retirer toutes votre argent." to arg-2
             send "Vous venez de retirer toutes l'argent de &9%arg-2%&r." to player
         else:
-            "&eSet first argument to &b[&e&lgive&r&e, &e&lremove &r&eor &e&lreset&b]&e."
+            send "&eSet first argument to &b[&e&lgive&r&e, &e&lremove &r&eor &e&lreset&b]&e." to player
