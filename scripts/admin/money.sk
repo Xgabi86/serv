@@ -4,15 +4,15 @@ command /moneyadmin <text> <player> [<number>]:
     trigger:
         if arg-1 is "give":
             if arg-3 > 0:
-                set {arg-1} to arg-1
-                add {arg-1} to balance of arg-2
+                set {arg-3} to arg-3
+                add {arg-3} to arg-2's balance
                 send "Le joueur &9%player% &rviens de vous donné &e&l%arg-3%&r&e$&r." to arg-2
                 send "Vous venez de donner &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
 
         if arg-1 is "remove":
             if arg-3 > 0:  
-                set {arg-1} to arg-1
-                set {money} to player's balance - {arg-1}
+                set {arg-3} to arg-3
+                set {money} to player's balance - {arg-3}
                 if {money} > -1:
                     set arg-2's balance to {money}
                     send "Le joueur &9%player% &rviens de vous retirer &e&l%arg-3%&r&e$&r." to arg-2
