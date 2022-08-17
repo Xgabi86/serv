@@ -29,7 +29,7 @@ command /moneyadmin <text> <player> [<number>]:
         else if arg-1 is not "give","remove" or "reset":
             send "&eSet first argument to &b[&e&lgive&r&e, &e&lremove &r&eor &e&lreset&b]&e." to player
 
-on tab complete of "/moneyadmin":
+on tab completer of "/moneyadmin":
     set tab completions for position 1 to "give", "remove" and "reset"
     if tab arg-1 = "give" or "remove":
         set tab completions for position 3 to "<number>"
