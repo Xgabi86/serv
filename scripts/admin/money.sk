@@ -9,7 +9,7 @@ command /moneyadmin <text> <player> [<number>]:
                 send "Le joueur &9%player% &rviens de vous donné &e&l%arg-3%&r&e$&r." to arg-2
                 send "Vous venez de donner &e&l%arg-3%&r&e$&r a &9%arg-2%&r." to player
 
-        if arg-1 is "remove":
+        if arg-1 is "remove" or "take":
             if arg-3 > 0:  
                 set {arg-3} to arg-3
                 set {money} to player's balance - {arg-3}
@@ -26,7 +26,7 @@ command /moneyadmin <text> <player> [<number>]:
             set arg-2's balance to 0
             send "Le joueur &9%player% &rviens de vous retirer toutes votre argent." to arg-2
             send "Vous venez de retirer toutes l'argent de &9%arg-2%&r." to player
-        else if arg-1 is not "give","remove" or "reset":
+        else if arg-1 is not "give","remove", "take" or "reset":
             send "&eSet first argument to &b[&e&lgive&r&e, &e&lremove &r&eor &e&lreset&b]&e." to player
 
 on tab complete of "/moneyadmin":
