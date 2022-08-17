@@ -1,4 +1,4 @@
-command /moneyadmin <text> <player> <number>:
+command /moneyadmin <text> <player> [<number>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
