@@ -1,6 +1,8 @@
 every seconds:
     if {true} is "true":
-        create holo object "TEST" with id "devskript.test" at {locjeu} for 1 seconds
+        delete holo object "devskript.test"
+        wait 1 second
+        create holo object "TEST" with id "devskript.test" at {locjeu}
 
 command /pos1489 [<text>]:
     permission: server.ops
