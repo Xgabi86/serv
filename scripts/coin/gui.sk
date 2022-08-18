@@ -2,27 +2,27 @@ every 12 seconds:
     if {true} is "true":
         set {prix.coin.fake} to {prix.coin}
         wait 1 second
-        set {prix.coin.2} to {prix.coin.fake}
+        set {prix.coin.2} to {prix.coin}
         wait 1 second
-        set {prix.coin.3} to {prix.coin.fake}
+        set {prix.coin.3} to {prix.coin}
         wait 1 second
-        set {prix.coin.4} to {prix.coin.fake}
+        set {prix.coin.4} to {prix.coin}
         wait 1 second
-        set {prix.coin.5} to {prix.coin.fake}
+        set {prix.coin.5} to {prix.coin}
         wait 1 second
-        set {prix.coin.6} to {prix.coin.fake}
+        set {prix.coin.6} to {prix.coin}
         wait 1 second
-        set {prix.coin.7} to {prix.coin.fake}
+        set {prix.coin.7} to {prix.coin}
         wait 1 second
-        set {prix.coin.8} to {prix.coin.fake}
+        set {prix.coin.8} to {prix.coin}
         wait 1 second
-        set {prix.coin.9} to {prix.coin.fake}
+        set {prix.coin.9} to {prix.coin}
         wait 1 second
-        set {prix.coin.10} to {prix.coin.fake}
+        set {prix.coin.10} to {prix.coin}
         wait 1 second
-        set {prix.coin.11} to {prix.coin.fake}
+        set {prix.coin.11} to {prix.coin}
         wait 1 second
-        set {prix.coin.12} to {prix.coin.fake}
+        set {prix.coin.12} to {prix.coin}
 
 command /gui:
     trigger:
