@@ -3,16 +3,46 @@ every seconds:
         set {prix.coin.fake} to {prix.coin}
         wait 21 ticks
         set {prix.coin.2} to {prix.coin.fake}
+        wait 21 ticks
+        set {prix.coin.3} to {prix.coin.2}
+        wait 21 ticks
+        set {prix.coin.4} to {prix.coin.3}
+        wait 21 ticks
+        set {prix.coin.5} to {prix.coin.4}
+        wait 21 ticks
+        set {prix.coin.6} to {prix.coin.5}
+        wait 21 ticks
+        set {prix.coin.7} to {prix.coin.6}
+        wait 21 ticks
+        set {prix.coin.8} to {prix.coin.7}
+        wait 21 ticks
+        set {prix.coin.9} to {prix.coin.8}
+        wait 21 ticks
+        set {prix.coin.10} to {prix.coin.9}
+        wait 21 ticks
+        set {prix.coin.11} to {prix.coin.10}
+        wait 21 ticks
+        set {prix.coin.12} to {prix.coin.11}
 
 command /gui:
     trigger:
-        close player's inventory 
-        loop 10 times:
-            open chest with 5 rows named "Coin's Gui" to player 
-            format slot 10 of player with 1 sand named "Prix actuel: %{prix.coin}%" to be unstealable
-            format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to be unstealable
-            wait 1 seconds
+        close player's inventory
+        wait 1 tick
+        open chest with 5 rows named "Coin's Gui" to player 
+        format slot 10 of player with 1 sand named "Prix actuel: %{prix.coin}%" to be unstealable
+        format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to be unstealable
+        format slot 14 of player with 1 sand named "Prix il y a 2 minutes: %{prix.coin.3}%" to be unstealable
+        format slot 16 of player with 1 sand named "Prix il y a 3 minutes: %{prix.coin.4}%" to be unstealable
+        format slot 18 of player with 1 sand named "Prix il y a 4 minutes: %{prix.coin.5}%" to be unstealable
+        format slot 20 of player with 1 sand named "Prix il y a 5 minutes: %{prix.coin.6}%" to be unstealable
+        format slot 22 of player with 1 sand named "Prix il y a 6 minutes: %{prix.coin.7}%" to be unstealable
+        format slot 24 of player with 1 sand named "Prix il y a 7 minutes: %{prix.coin.8}%" to be unstealable
+        format slot 26 of player with 1 sand named "Prix il y a 8 minutes: %{prix.coin.9}%" to be unstealable
+        format slot 28 of player with 1 sand named "Prix il y a 9 minutes: %{prix.coin.10}%" to be unstealable
+        format slot 30 of player with 1 sand named "Prix il y a 10 minutes: %{prix.coin.11}%" to be unstealable
+        format slot 32 of player with 1 sand named "Prix il y a 11 minutes: %{prix.coin.12}%" to be unstealable
 
 on inventory click:
     if inventory name of player's current inventory is "Coin's Gui":
         cancel event
+        make player execute command "/gui"
