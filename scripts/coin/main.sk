@@ -7,12 +7,12 @@ every seconds:
             delete holo object "devskript.test"
             create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
-command /coin <text> [<integer>]/[<player>]:
+command /coin <text> [<number>]/[<player>]:
     trigger:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
-        else if arg-2 parsed a number:
+        else if arg-2 is a number:
             if arg-1 is "buy":
                 if player's balance >= {prix.coin} * arg-2:
                     remove {prix.coin} * arg-2 from player's balance
@@ -23,7 +23,7 @@ command /coin <text> [<integer>]/[<player>]:
                     remove arg-2 from {coin.%player%}
                     add {prix.coin} * arg-2 to player's balance
                     send "Vous venez de vendre %arg-2% coin pour %{prix.coin} * arg-2%$"
-        else if arg-2 parsed a player:
+        else if arg-2 is a player:
             else if arg-1 is "info":
                 send "Prix actuel du coin: %{prix.coin}%" to player
                 send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
