@@ -1,8 +1,8 @@
 every seconds:
     if {true} is "true":
-        create holo object "test-----------" with id "prix.coin.holo" at {_pos1489}
+        create new holo with lines "line 1", "line 2" and "line 3" at {_pos1489} and store in {test}
         wait 1 second
-        delete holo object "prix.coin.holo"
+        delete holo {test}
 
 command /pos1489 [<text>]:
     permission: server.ops
