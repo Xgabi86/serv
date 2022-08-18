@@ -40,7 +40,7 @@ command /gui:
         format slot 26 of player with 1 sand named "Prix il y a 8 minutes: %{prix.coin.9}%" to close then run [make player execute command "gui"]
         format slot 28 of player with 1 sand named "Prix il y a 9 minutes: %{prix.coin.10}%" to close then run [make player execute command "gui"]
         format slot 30 of player with 1 sand named "Prix il y a 10 minutes: %{prix.coin.11}%" to close then run [make player execute command "gui"]
-        format slot 32 of player with 1 sand named "Prix il y a 11 minutes: %{prix.coin.12}%" to close then run [make player execute command "gui"]
+        format slot 32 of player with 1 sand named "Prix il y a 11 minutes: %{prix.coin.12}%" then run [make player execute command "gui"]
 
 on inventory click:
     if inventory name of player's current inventory is "Coin's Gui":
