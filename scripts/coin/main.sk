@@ -2,7 +2,7 @@ every seconds:
     if {true} is "true":
         set {random2} to random integer between -100 and 100
         wait 1 tick
-        if {random2} is = 0:
+        if {random2} = 0:
             set {random2} to random integer between -100 and 100
             if {prix.coin} + {random2} > -1:
                 add {random2} to {prix.coin}
@@ -14,7 +14,7 @@ every seconds:
                 delete holo object "devskript.test"
                 create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
-command /coin <text> [<number/player>]:
+command /coin <text> [<number>]:
     trigger:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0

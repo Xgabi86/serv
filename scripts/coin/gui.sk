@@ -27,10 +27,10 @@ every seconds:
 every seconds:
     loop all players:
         if inventory name of loop-player's current inventory is "Coin's Gui":
-            close player's inventory
+            close loop-player's inventory
             wait 1 tick
-            open chest with 5 rows named "Coin's Gui" to player 
-            format slot 10 of player with 1 sand named "Prix actuel: %{prix.coin}%" to close then run [make player execute command "/gui"]
+            open chest with 5 rows named "Coin's Gui" to loop-player 
+            format slot 10 of loop-player with 1 sand named "Prix actuel: %{prix.coin}%" to close then run [make player execute command "/gui"]
             format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to close then run [make player execute command "/gui"]
             format slot 14 of player with 1 sand named "Prix il y a 2 minutes: %{prix.coin.3}%" to close then run [make player execute command "/gui"]
             format slot 16 of player with 1 sand named "Prix il y a 3 minutes: %{prix.coin.4}%" to close then run [make player execute command "/gui"]
