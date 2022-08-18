@@ -1,6 +1,6 @@
 every seconds:
     if {true} is "true":
-        create new holo with lines "line 1", "line 2" and "line 3" and store in {test}
+        create new holo with lines "line 1", "line 2" and "line 3" at {_pos1489} and store in {test}
         wait 1 second
         delete holo {test}
 
