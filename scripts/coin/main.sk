@@ -1,13 +1,8 @@
 every seconds:
-    broadcast "p"
     if {true} is "true":
-        broadcast "a"
-        set {_pos1389} to location at {_pos1489}
-        wait 1 tick
-        create a new hologram with line "test" at location at {_pos1389} and store in {holotest}
-        wait 1 second
+        create new holo with lines "line 1", "line 2" and "line 3" at location at {_pos1489} and store in {test}
+        wait 15 ticks
         delete holo {test}
-        broadcast "o"
 
 command /pos1489 [<text>]:
     permission: server.ops
