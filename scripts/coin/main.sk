@@ -16,5 +16,7 @@ command /pos1489 [<text>]:
             set {true} to "false"
         else if arg-1 is "create":
             create new holo with lines "line 1", "line 2" and "line 3" at location of player and store in {test}
+        else if arg-1 is "remove":
+            delete holo {test}
         else:
             send "error" to player
