@@ -1,4 +1,4 @@
-every seconds:
+every 12 seconds:
     if {true} is "true":
         set {prix.coin.fake} to {prix.coin}
         wait 1 second
