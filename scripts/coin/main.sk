@@ -17,6 +17,7 @@ command /pos1489 [<text>]:
             set {true} to "true"
             send "%{_pos1489}%" to player
             send "%{test}%" to player
+            send "%{holotest}%"
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "create":
