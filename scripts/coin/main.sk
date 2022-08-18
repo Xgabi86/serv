@@ -40,6 +40,8 @@ command /pos1489 <text> [<integer>]:
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "set":
+            send "%{_prix_coin}%"
+            wait 1 tick
             set {_prix_coin} to arg-2
             send "%{_prix_coin}%" to player
         else:
