@@ -7,22 +7,21 @@ every seconds:
             delete holo object "devskript.test"
             create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
-command /coin <text> [<text>]:
+command /coin <text> [<integer>][<text>]:
     trigger:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
-        if arg-2 parsed as a number:
-            if arg-1 is "buy":
-                if player's balance >= {prix.coin} * arg-2:
-                    remove {prix.coin} * arg-2 from player's balance
-                    add arg-2 to {coin.%player%}
-                    send "Vous venez de d'acheter %arg-2% coin pour %{prix.coin} * arg-2%$"
-            else if arg-1 is "sell":
-                if arg-2 <= {coin.%player%}:
-                    remove arg-2 from {coin.%player%}
-                    add {prix.coin} * arg-2 to player's balance
-                    send "Vous venez de vendre %arg-2% coin pour %{prix.coin} * arg-2%$"
+        if arg-1 is "buy":
+            if player's balance >= {prix.coin} * arg-2:
+                remove {prix.coin} * arg-2 from player's balance
+                add arg-2 to {coin.%player%}
+                send "Vous venez de d'acheter %arg-2% coin pour %{prix.coin} * arg-2%$"
+        else if arg-1 is "sell":
+            if arg-2 <= {coin.%player%}:
+                remove arg-2 from {coin.%player%}
+                add {prix.coin} * arg-2 to player's balance
+                send "Vous venez de vendre %arg-2% coin pour %{prix.coin} * arg-2%$"
         else if arg-1 is "info":
             send "Prix actuel du coin: %{prix.coin}%" to player
             send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
