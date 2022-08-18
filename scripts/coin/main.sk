@@ -1,27 +1,17 @@
 every seconds:
     if {true} is "true":
-        create holo object "test" with id "test.test.holo" at location at {_pos1489}
-        wait 15 ticks
-        delete holo object "test.test.holo"
+        delete holo object "devskript.test"
+        create holo object "TEST" with id "devskript.test" at {locjeu}# for 1 seconds
 
 command /pos1489 [<text>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
-        set {_pos1489} to location at player
-        send "&aGood" to player
+        set {locjeu} to location at player
         wait 1 tick
         if arg-1 is "true":
             set {true} to "true"
-            send "%{_pos1489}%" to player
-            send "%{test}%" to player
-            send "%{holotest}%"
         else if arg-1 is "false":
             set {true} to "false"
-        else if arg-1 is "create":
-            create new holo with lines "line 1", "line 2" and "line 3" at location at {_pos1489} and store in {test}
-        else if arg-1 is "remove":
-            delete holo {test}
-            set {test} to " "
         else:
             send "error" to player
