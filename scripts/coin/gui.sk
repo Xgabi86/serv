@@ -45,4 +45,5 @@ command /gui:
 on inventory click:
     if inventory name of player's current inventory is "Coin's Gui":
         cancel event
+        wait 1 tick
         make player execute command "/gui"
