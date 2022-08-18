@@ -4,7 +4,7 @@ every seconds:
         broadcast "a"
         set {_pos1389} to location at {_pos1489}
         wait 1 tick
-        create new holo with lines "line 1", "line 2" and "line 3" at location at {_pos1389} and store in {holotest}
+        create a new hologram with line "test" and store in {holotest}
         wait 1 second
         delete holo {test}
         broadcast "o"
