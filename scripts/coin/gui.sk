@@ -26,7 +26,7 @@ every seconds:
 
 every seconds:
     loop all players:
-        if inventory name of current inventory of loop-player contains "Coin's Gui":
+        if event-inventory's display name contains "Coin's Gui":
             close loop-player's inventory
             wait 1 tick
             open chest with 5 rows named "Coin's Gui" to loop-player 
