@@ -12,3 +12,7 @@ command /gui:
             format slot 10 of player with 1 sand named "Prix actuel: %{prix.coin}%" to be unstealable
             format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to be unstealable
             wait 1 seconds
+
+on inventory click:
+    if inventory name of player's current inventory is "Coin's Gui":
+        cancel event
