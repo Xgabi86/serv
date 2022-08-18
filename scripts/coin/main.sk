@@ -1,9 +1,16 @@
 every seconds:
-    create hologram "Prix actuel des coin;ItemStack:emerald;Coin1: %{coin1.prise}%$" at {_pos1489} for 1 seconds
+    if {true} is "true":
+        create hologram "Prix actuel des coin;ItemStack:emerald;Coin1: %{coin1.prise}%$" at {_pos1489} for 1 seconds
 
-command /pos1489:
+command /pos1489 [<text>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
         set {_pos1489} to location above player
         send "&aGood" to player
+        if arg-1 is "true":
+            set {true} to "true"
+        else if arg-1 is "false":
+            set {true} to "false"
+        else:
+            send "error" to player
