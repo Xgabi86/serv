@@ -8,6 +8,11 @@ every seconds:
                 add {random2} to {prix.coin}
                 delete holo object "devskript.test"
                 create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
+        else:
+            if {prix.coin} + {random2} > -1:
+                add {random2} to {prix.coin}
+                delete holo object "devskript.test"
+                create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
 command /coin <text> [<number/player>]:
     trigger:
