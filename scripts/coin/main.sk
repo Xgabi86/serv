@@ -16,9 +16,12 @@ command /coin <text> [<integer>]:
             if player's balance >= {prix.coin} * arg-2:
                 remove {prix.coin} * arg-2 from player's balance
                 add arg-2 to {coin.%player%}
+                send "Vous venez de d'acheter %arg-2% coin pour %{prix.coin} * arg-2%$"
         else if arg-1 is "sell":
             if arg-2 <= {coin.%player%}:
                 remove arg-2 from {coin.%player%}
+                add {prix.coin} * arg-2 to player's balance
+                send "Vous venez de vendre %arg-2% coin pour %{prix.coin} * arg-2%$"
         else if arg-1 is "info":
             send "Prix actuel du coin: %{prix.coin}%" to player
             send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
