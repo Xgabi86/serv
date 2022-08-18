@@ -30,7 +30,7 @@ every seconds:
 
 
 
-command /pos1489 [<text>]:
+command /pos1489 <text> [<integer>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
@@ -40,6 +40,6 @@ command /pos1489 [<text>]:
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "set":
-            set {_prix_coin} to arg-1
+            set {_prix_coin} to arg-2
         else:
             send "error" to player
