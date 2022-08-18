@@ -8,7 +8,7 @@ command /pos1489 [<text>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
-        set {_pos1489} to location above player
+        set {_pos1489} to location at player
         send "&aGood" to player
         if arg-1 is "true":
             set {true} to "true"
