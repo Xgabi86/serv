@@ -1,8 +1,33 @@
 every seconds:
     if {true} is "true":
-        create holo object "TEST" with id "devskript.test" at {locjeu}
+        set {_random2} to random integer between -1 and 1
+        wait 1 tick
+        set {_prix_coin} to {_prix_coin} + {_random2}
         delete holo object "devskript.test"
-        create holo object "TEST" with id "devskript.test" at {locjeu}
+        create holo object "Prix des coins:; ;Coin: %{_prix_coin}%" with id "devskript.test" at {locjeu}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 command /pos1489 [<text>]:
     permission: server.ops
