@@ -7,7 +7,7 @@ every seconds:
             delete holo object "devskript.test"
             create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
-command /coin <text> [<integer>]:
+command /coin <text> [<text>]:
     trigger:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0
@@ -30,6 +30,8 @@ on tab complete of "/coin":
     set tab completions for position 1 to "buy", "sell" and "info"
     if tab arg-1 = "buy" or "sell":
         set tab completions for position 2 to "<number>"
+    else if arg-1 = "info":
+        
 
 command /coinadmin <text> [<integer>]:
     permission: server.ops
