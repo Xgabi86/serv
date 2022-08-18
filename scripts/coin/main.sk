@@ -34,11 +34,12 @@ command /pos1489 [<text>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
-        set {locjeu} to location at player
-        wait 1 tick
         if arg-1 is "true":
             set {true} to "true"
+            set {locjeu} to location at player
         else if arg-1 is "false":
             set {true} to "false"
+        else if arg-1 is "set":
+            set {_prix_coin} to arg-1
         else:
             send "error" to player
