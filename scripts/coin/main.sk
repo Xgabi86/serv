@@ -8,16 +8,17 @@ every seconds:
             create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
 command /coin <text> <integer>:
-    if arg-1 is "buy":
-        if player's balance >= {prix.coin} * arg-2:
-            remove {prix.coin} * arg-2 from player's balance
-            add arg-2 to {coin.%player%}
-    else if arg-1 is "sell":
-        if arg-2 <= {coin.%player%}:
-            remove arg-2 from {coin.%player%}
-    else if arg-1 is "info":
-        send "Prix actuel du coin: %{prix.coin}%" to player
-        send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
+    trigger:
+        if arg-1 is "buy":
+            if player's balance >= {prix.coin} * arg-2:
+                remove {prix.coin} * arg-2 from player's balance
+                add arg-2 to {coin.%player%}
+        else if arg-1 is "sell":
+            if arg-2 <= {coin.%player%}:
+                remove arg-2 from {coin.%player%}
+        else if arg-1 is "info":
+            send "Prix actuel du coin: %{prix.coin}%" to player
+            send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
 
 command /coin <text> [<integer>]:
     permission: server.ops
