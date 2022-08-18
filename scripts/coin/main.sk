@@ -1,34 +1,11 @@
 every seconds:
     if {true} is "true":
-        set {_random2} to random integer between -1 and 1
+        set {random2} to random integer between -1 and 1
         wait 1 tick
-        if {_prix_coin} + {_random2} > -1:
-            add {_random2} to {_prix_coin}
+        if {prix_coin} + {random2} > -1:
+            add {random2} to {prix_coin}
             delete holo object "devskript.test"
-            create holo object "Prix des coins:; ;Coin: %{_prix_coin}%" with id "devskript.test" at {locjeu}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            create holo object "Prix des coins:; ;Coin: %{prix_coin}%" with id "devskript.test" at {locjeu}
 
 command /pos1489 <text> [<integer>]:
     permission: server.ops
@@ -40,9 +17,10 @@ command /pos1489 <text> [<integer>]:
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "set":
-            send "%{_prix_coin}%"
+            send "%{prix_coin}%"
             wait 1 tick
-            set {_prix_coin} to arg-2
-            send "%{_prix_coin}%" to player
+            set {prix_coin} to arg-2
+            wait 1 tick
+            send "%{prix_coin}%" to player
         else:
             send "error" to player
