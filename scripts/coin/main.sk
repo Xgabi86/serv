@@ -9,7 +9,7 @@ every seconds:
 
 command /coin <text> [<integer>]:
     trigger:
-        if {coin.%player%} is not defined:
+        if {coin.%player%} is not set:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
         if arg-1 is "buy":
