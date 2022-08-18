@@ -30,10 +30,10 @@ every seconds:
             close loop-player's inventory
             wait 1 tick
             open chest with 5 rows named "Coin's Gui" to loop-player 
-            format slot 10 of loop-player with 1 sand named "Prix actuel: %{prix.coin}%" to close then run [make player execute command "/gui"]
-            format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to close then run [make player execute command "/gui"]
-            format slot 14 of player with 1 sand named "Prix il y a 2 minutes: %{prix.coin.3}%" to close then run [make player execute command "/gui"]
-            format slot 16 of player with 1 sand named "Prix il y a 3 minutes: %{prix.coin.4}%" to close then run [make player execute command "/gui"]
+            format slot 10 of loop-player with 1 sand named "Prix actuel: %{prix.coin}%" to close then run [make loop-player execute command "/gui"]
+            format slot 12 of loop-player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to close then run [make loop-player execute command "/gui"]
+            format slot 14 of loop-player with 1 sand named "Prix il y a 2 minutes: %{prix.coin.3}%" to close then run [make loop-player execute command "/gui"]
+            format slot 16 of loop-player with 1 sand named "Prix il y a 3 minutes: %{prix.coin.4}%" to close then run [make loop-player execute command "/gui"]
             format slot 18 of player with 1 sand named "Prix il y a 4 minutes: %{prix.coin.5}%" to close then run [make player execute command "/gui"]
             format slot 20 of player with 1 sand named "Prix il y a 5 minutes: %{prix.coin.6}%" to close then run [make player execute command "/gui"]
             format slot 22 of player with 1 sand named "Prix il y a 6 minutes: %{prix.coin.7}%" to close then run [make player execute command "/gui"]
