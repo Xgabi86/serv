@@ -33,14 +33,14 @@ command /gui:
         format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to run [make player execute command "/gui"]
         format slot 14 of player with 1 sand named "Prix il y a 2 minutes: %{prix.coin.3}%" to run [make player execute command "/gui"]
         format slot 16 of player with 1 sand named "Prix il y a 3 minutes: %{prix.coin.4}%" to run [make player execute command "/gui"]
-        format slot 18 of player with 1 sand named "Prix il y a 4 minutes: %{prix.coin.5}%" to run [make player execute command "/gui"]
-        format slot 20 of player with 1 sand named "Prix il y a 5 minutes: %{prix.coin.6}%" to run [make player execute command "/gui"]
-        format slot 22 of player with 1 sand named "Prix il y a 6 minutes: %{prix.coin.7}%" to run [make player execute command "/gui"]
-        format slot 24 of player with 1 sand named "Prix il y a 7 minutes: %{prix.coin.8}%" to run [make player execute command "/gui"]
-        format slot 26 of player with 1 sand named "Prix il y a 8 minutes: %{prix.coin.9}%" to run [make player execute command "/gui"]
-        format slot 28 of player with 1 sand named "Prix il y a 9 minutes: %{prix.coin.10}%" to run [make player execute command "/gui"]
-        format slot 30 of player with 1 sand named "Prix il y a 10 minutes: %{prix.coin.11}%" to run [make player execute command "/gui"]
-        format slot 32 of player with 1 sand named "Prix il y a 11 minutes: %{prix.coin.12}%" to run [make player execute command "/gui"]
+        format slot 19 of player with 1 sand named "Prix il y a 4 minutes: %{prix.coin.5}%" to run [make player execute command "/gui"]
+        format slot 21 of player with 1 sand named "Prix il y a 5 minutes: %{prix.coin.6}%" to run [make player execute command "/gui"]
+        format slot 23 of player with 1 sand named "Prix il y a 6 minutes: %{prix.coin.7}%" to run [make player execute command "/gui"]
+        format slot 25 of player with 1 sand named "Prix il y a 7 minutes: %{prix.coin.8}%" to run [make player execute command "/gui"]
+        format slot 27 of player with 1 sand named "Prix il y a 8 minutes: %{prix.coin.9}%" to run [make player execute command "/gui"]
+        format slot 29 of player with 1 sand named "Prix il y a 9 minutes: %{prix.coin.10}%" to run [make player execute command "/gui"]
+        format slot 31 of player with 1 sand named "Prix il y a 10 minutes: %{prix.coin.11}%" to run [make player execute command "/gui"]
+        format slot 33 of player with 1 sand named "Prix il y a 11 minutes: %{prix.coin.12}%" to run [make player execute command "/gui"]
 
 on inventory click:
     if inventory name of player's current inventory is "Coin's Gui":
