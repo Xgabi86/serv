@@ -1,9 +1,11 @@
-every 10 seconds:
+every seconds:
+    broadcast "p"
     if {true} is "true":
+        broadcast "a"
         set {_pos1389} to location at {_pos1489}
         wait 1 tick
         create new holo with lines "line 1", "line 2" and "line 3" at location at {_pos1389} and store in {holotest}
-        wait 10 seconds
+        wait 1 second
         delete holo {test}
         broadcast "o"
 
