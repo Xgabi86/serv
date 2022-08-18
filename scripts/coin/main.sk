@@ -15,6 +15,6 @@ command /pos1489 [<text>]:
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "create":
-            create new holo with lines "line 1", "line 2" and "line 3" and store in {test}
+            create new holo with lines "line 1", "line 2" and "line 3" and store in {test} at location of player
         else:
             send "error" to player
