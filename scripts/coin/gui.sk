@@ -1,28 +1,28 @@
 every seconds:
     if {true} is "true":
         set {prix.coin.fake} to {prix.coin}
-        wait 21 ticks
+        wait 1 second
         set {prix.coin.2} to {prix.coin.fake}
-        wait 21 ticks
-        set {prix.coin.3} to {prix.coin.2}
-        wait 21 ticks
-        set {prix.coin.4} to {prix.coin.3}
-        wait 21 ticks
-        set {prix.coin.5} to {prix.coin.4}
-        wait 21 ticks
-        set {prix.coin.6} to {prix.coin.5}
-        wait 21 ticks
-        set {prix.coin.7} to {prix.coin.6}
-        wait 21 ticks
-        set {prix.coin.8} to {prix.coin.7}
-        wait 21 ticks
-        set {prix.coin.9} to {prix.coin.8}
-        wait 21 ticks
-        set {prix.coin.10} to {prix.coin.9}
-        wait 21 ticks
-        set {prix.coin.11} to {prix.coin.10}
-        wait 21 ticks
-        set {prix.coin.12} to {prix.coin.11}
+        wait 1 second
+        set {prix.coin.3} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.4} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.5} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.6} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.7} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.8} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.9} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.10} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.11} to {prix.coin.fake}
+        wait 1 second
+        set {prix.coin.12} to {prix.coin.fake}
 
 command /gui:
     trigger:
