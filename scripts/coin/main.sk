@@ -15,6 +15,7 @@ command /pos1489 [<text>]:
         wait 1 tick
         if arg-1 is "true":
             set {true} to "true"
+            create holo object "TEST" with id "devskript.test" at {locjeu}
         else if arg-1 is "false":
             set {true} to "false"
         else:
