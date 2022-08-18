@@ -1,6 +1,8 @@
 every seconds:
     if {true} is "true":
-        create hologram "Prix actuel des coin;ItemStack:emerald;Coin1: %{coin1.prise}%$" at {_pos1489} for 1 seconds
+        create holo object "test-----------" with id "prix.coin.holo" at {_pos1489}
+	    wait 1 second
+	    delete holo object "prix.coin.holo"
 
 command /pos1489 [<text>]:
     permission: server.ops
