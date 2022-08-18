@@ -5,6 +5,7 @@ every 10 seconds:
         create new holo with lines "line 1", "line 2" and "line 3" at location at {_pos1389} and store in {holotest}
         wait 10 seconds
         delete holo {test}
+        broadcast "o"
 
 command /pos1489 [<text>]:
     permission: server.ops
