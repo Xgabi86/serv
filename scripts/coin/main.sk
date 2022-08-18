@@ -7,9 +7,9 @@ every seconds:
             delete holo object "devskript.test"
             create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
 
-command /coin <text> <integer>:
+command /coin <text> [<integer>]:
     trigger:
-        if {coin.%player%} < 0:
+        if {coin.%player%} is not defined:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
         if arg-1 is "buy":
