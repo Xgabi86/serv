@@ -1,7 +1,8 @@
 every seconds:
     if {true} is "true":
+        set {prix.coin.fake} to {prix.coin}
         wait 1 second
-        set {prix.coin.2} to {prix.coin}
+        set {prix.coin.2} to {prix.coin.fake}
 
 command /gui:
     trigger:
@@ -9,5 +10,5 @@ command /gui:
         wait 2 ticks
         open chest with 5 rows named "Coin's Gui" to player 
         wait 2 ticks
-        format slot 11 of player with 1 sand named "%{prix.coin}%" to be unstealable
-        format slot 12 of player with 1 sand named "%{prix.coin.2}%" to be unstealable
+        format slot 11 of player with 1 sand named "Prix actuel: %{prix.coin}%" to be unstealable
+        format slot 12 of player with 1 sand named "Prix il y a 1 minute: %{prix.coin.2}%" to be unstealable
