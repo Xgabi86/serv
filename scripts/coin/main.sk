@@ -20,7 +20,7 @@ command /coin <text> <integer>:
             send "Prix actuel du coin: %{prix.coin}%" to player
             send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
 
-command /coin <text> [<integer>]:
+command /coinadmin <text> [<integer>]:
     permission: server.ops
     permission message:&9tu n'as pas la permission
     trigger:
