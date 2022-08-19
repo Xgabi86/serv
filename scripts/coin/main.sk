@@ -12,22 +12,20 @@ command /coin <text> [<text>]:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
-        else if arg-2 is a number:
-            set {arg-2.number} to arg-2 parsed as a number
-            wait 1 tick
-            send "%{arg-2.number}%" to player
-            if arg-1 is "buy":
-                if player's balance >= {prix.coin} * {arg-2.number}:
-                    remove {prix.coin} * {arg-2.number} from player's balance
-                    add {arg-2.number} to {coin.%player%}
-                    send "Vous venez de d'acheter %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
-            else if arg-1 is "sell":
-                if {arg-2.number} <= {coin.%player%}:
-                    remove {arg-2.number} from {coin.%player%}
-                    add {prix.coin} * {arg-2.number} to player's balance
-                    send "Vous venez de vendre %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
+        set {arg-2.number} to arg-2 parsed as a number
+        wait 1 tick
+        send "%{arg-2.number}%" to player
+        if arg-1 is "buy":
+            if player's balance >= {prix.coin} * {arg-2.number}:
+                remove {prix.coin} * {arg-2.number} from player's balance
+                add {arg-2.number} to {coin.%player%}
+                send "Vous venez de d'acheter %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
+        else if arg-1 is "sell":
+            if {arg-2.number} <= {coin.%player%}:
+                remove {arg-2.number} from {coin.%player%}
+                add {prix.coin} * {arg-2.number} to player's balance
+                send "Vous venez de vendre %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
         else:
-            send "aaaaaa" to player
             if arg-1 is "info":
                 if arg-2 is set:
                     set {player.info} to arg-2
