@@ -13,25 +13,33 @@ command /coin <text> [<text>]:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
         else if arg-2 is a number:
+            set {arg-2.number} to arg-2 parsed as a number
             if arg-1 is "buy":
-                if player's balance >= {prix.coin} * arg-2:
-                    remove {prix.coin} * arg-2 from player's balance
-                    add arg-2 to {coin.%player%}
-                    send "Vous venez de d'acheter %arg-2% coin pour %{prix.coin} * arg-2%$"
+                if player's balance >= {prix.coin} * {arg-2.number}:
+                    remove {prix.coin} * {arg-2.number} from player's balance
+                    add {arg-2.number} to {coin.%player%}
+                    send "Vous venez de d'acheter %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
             else if arg-1 is "sell":
-                if arg-2 <= {coin.%player%}:
-                    remove arg-2 from {coin.%player%}
-                    add {prix.coin} * arg-2 to player's balance
-                    send "Vous venez de vendre %arg-2% coin pour %{prix.coin} * arg-2%$"
-        else if arg-2 is a player:
-            else if arg-1 is "info":
-                send "Prix actuel du coin: %{prix.coin}%" to player
-                send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
+                if {arg-2.number} <= {coin.%player%}:
+                    remove {arg-2.number} from {coin.%player%}
+                    add {prix.coin} * {arg-2.number} to player's balance
+                    send "Vous venez de vendre %{arg-2.number}% coin pour %{prix.coin} * {arg-2.number}%$"
+        else:
+            if arg-1 is "info":
+                if arg-2 is set:
+                    set {player.info} to arg-2
+                    send "Prix actuel du coin: %{prix.coin}%" to player
+                    send "Nombre actuel de coin qui vous appartient: %{coin.%{player.info}%}%" to player
+                else:
+                    send "Prix actuel du coin: %{prix.coin}%" to player
+                    send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
 
 on tab complete of "/coin":
     set tab completions for position 1 to "buy", "sell" and "info"
     if tab arg-1 = "buy" or "sell":
         set tab completions for position 2 to "<number>"
+    else if arg-1 = "info":
+        set tab completions for position 2 to "<player>"
 
 command /coinadmin <text> [<integer>]:
     permission: server.ops
