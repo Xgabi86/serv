@@ -7,12 +7,12 @@ every seconds:
             if {prix.coin} + {random2} > -1:
                 add {random2} to {prix.coin}
                 delete holo object "devskript.test"
-                create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
+                create holo object "&aPrix des coins:; ;&eCoin: &e&l%{prix.coin}%" with id "devskript.test" at {locjeu}
         else:
             if {prix.coin} + {random2} > -1:
                 add {random2} to {prix.coin}
                 delete holo object "devskript.test"
-                create holo object "Prix des coins:; ;Coin: %{prix.coin}%" with id "devskript.test" at {locjeu}
+                create holo object "&aPrix des coins:; ;&eCoin: &e&l%{prix.coin}%" with id "devskript.test" at {locjeu}
 
 command /coin <text> [<text>]:
     trigger:
@@ -50,10 +50,10 @@ command /coinadmin <text> [<integer>]:
         else if arg-1 is "false":
             set {true} to "false"
         else if arg-1 is "set":
-            send "%{prix_coin}%"
+            send "%{prix.coin}%"
             wait 1 tick
-            set {prix_coin} to arg-2
+            set {prix.coin} to arg-2
             wait 1 tick
-            send "%{prix_coin}%" to player
+            send "%{prix.coin}%" to player
         else:
             send "error" to player
