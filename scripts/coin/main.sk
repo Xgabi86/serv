@@ -12,9 +12,8 @@ command /coin <text> [<text>]:
         if {coin.%player%} is not set:
             set {coin.%player%} to 0
             execute player command "coin %arg-1% %arg-2%"
-        set {arg-2.number} to arg-2 parsed as a number
+        set {arg-2.number} to arg-2
         wait 1 tick
-        send "%{arg-2.number}%" to player
         if arg-1 is "buy":
             if player's balance >= {prix.coin} * {arg-2.number}:
                 remove {prix.coin} * {arg-2.number} from player's balance
