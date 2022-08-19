@@ -28,8 +28,14 @@ command /coin <text> [<text>]:
             if arg-1 is "info":
                 if arg-2 is set:
                     set {player.info} to arg-2
-                    send "Prix actuel du coin: %{prix.coin}%" to player
-                    send "Nombre actuel de coin qui vous appartient: %{coin.%{player.info}%}%" to player
+                    if {coin.%{player.info}%} is not set:
+                        set {coin.%{player.info}%} to 0
+                        wait 1 tick
+                        send "Prix actuel du coin: %{prix.coin}%" to player
+                        send "Nombre actuel de coin qui appartient a %arg-2%: %{coin.%{player.info}%}%" to player
+                    else:
+                        send "Prix actuel du coin: %{prix.coin}%" to player
+                        send "Nombre actuel de coin qui appartient a %arg-2%: %{coin.%{player.info}%}%" to player
                 else:
                     send "Prix actuel du coin: %{prix.coin}%" to player
                     send "Nombre actuel de coin qui vous appartient: %{coin.%player%}%" to player
