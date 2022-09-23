@@ -1,3 +1,4 @@
+###############################                    MAIN                      ##############################
 command /giveflowers:
     permission: server.ops
     permission message:&9tu n'as pas la permission
@@ -46,4 +47,12 @@ on break of white tulip or pink tulip:
         remove event-block from {flower::*}
         set event-block to air
         wait 1 tick
+        drop white tulip named "&2Flower Plant" with custom model data 1001 at event-block
+
+##############################               DROP               #######################################
+
+on break of minecraft:grass or minecraft:tall_grass or minecraft:fern or minecraft:large_fern:
+    set {_random} to random integer between 1 and 150
+    wait 1 tick
+    if {_random} = 1:
         drop white tulip named "&2Flower Plant" with custom model data 1001 at event-block
