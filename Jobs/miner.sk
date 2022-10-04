@@ -80,3 +80,4 @@ on place:
             set player's balance to player's balance - 16
             if {jobs-alert::%player%} is "true":
                 set action bar of player to "&6You placed a stone and lost &e&l16 &6coins!"
+

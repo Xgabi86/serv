@@ -1,0 +1,15 @@
+aliace:
+    ore = minecraft:stone, minecraft:coal_ore, minecraft:iron_ore, minecraft: gold_ore and minecraft:diamond_ore
+
+on mine of ore:
+    if player's tool is ston pickaxe:
+        if {jobs:%player%:miner} >= 2:
+            stop
+        else: 
+            cancel event
+            set action of player to "&4Vous devez être niveau 3 miner pour utiliser cette pioche."
+    else if player's tool is iron pickaxe:
+        if {jobs:%player%:miner} >= 5:
+            stop
+        else:
+            
