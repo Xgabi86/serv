@@ -32,3 +32,4 @@ on mine of ore:
         else:
             cancel event
             set action of player to "&4Vous devez être niveau 15 miner pour utiliser cette pioche."
+
