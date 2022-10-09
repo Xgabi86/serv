@@ -1,20 +1,41 @@
-on: [push]
+name: Build and deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-    deploy_job:
-         runs-on: ubuntu-latest
-         name: deploy
-         steps:
-             - name: Checkout
-               uses: actions/checkout@v2
-             - name: Deploy file
-               uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-               with:
-                 username: ${{ secrets.FTP_USER }}
-                 server: ${{ secrets.FTP_SERVER }}
-                 port: ${{ secrets.FTP_PORT }}
-                 local_path: './*'
-                 remote_path: '/plugins/Skript/scripts/'
-                 sftp_only: false
-                 password: ${{ secrets.FTP_PASSWORD }}
-                 
+  build:
+    name: Build ⛏
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Install dependencies
+        run: npm ci
+      - name: Build dependencies
+        run: npm run build
+      - name: Archive production artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: dist
+          path: dist
+  deploy:
+    name: Deploy 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@main
+      - name: Download artifact
+        uses: actions/download-artifact@main
+        with: 
+          name: dist
+          path: dist
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with: 
+          server: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PASSWORD }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
