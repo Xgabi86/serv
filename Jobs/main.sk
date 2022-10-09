@@ -77,5 +77,6 @@ command /setjoblevel <player> <integer>:
     permission: sever.ops
     trigger:
         set {player} to arg-1
-        set {joblevel-miner-{player}} to arg-2
+        set {arg-2} to arg-2
+        set {joblevel-miner-{player}} to {arg-2}
         send "&aLe joueur &e%player% &aest maintenant niveau &e{joblevel-miner-%player%}&a."
