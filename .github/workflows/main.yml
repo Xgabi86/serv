@@ -13,4 +13,6 @@ jobs:
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
+        local_path: './*'
+        remote_path: '/plugins/Skript/scripts/'
         password: ${{ secrets.FTP_PASSWORD }}
