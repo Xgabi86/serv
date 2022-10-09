@@ -2,36 +2,37 @@ aliases:
     ore = minecraft:stone, minecraft:coal_ore, minecraft:iron_ore, minecraft:gold_ore, minecraft:diamond_ore
 
 on mine of ore:
+    set {player} to %player%
     if player's tool is stone pickaxe:
-        if {joblevel-miner-%player%} >= 2:
+        if {joblevel-miner-{player}} >= 2:
             stop
         else: 
             cancel event
             set action bar of player to "&4Vous devez être niveau 3 miner pour utiliser cette pioche."
 
     else if player's tool is iron pickaxe:
-        if {joblevel-miner-%player%} >= 5:
+        if {joblevel-miner-{player}} >= 5:
             stop
         else:
             cancel event
             set action bar of player to "&4Vous devez être niveau 5 miner pour utiliser cette pioche."
 
     else if player's tool is golden pickaxe:
-        if {joblevel-miner-%player%} >= 7:
+        if {joblevel-miner-{player}} >= 7:
             stop
         else:
             cancel event
             set action bar of player to "&4Vous devez être niveau 7 miner pour utiliser cette pioche."
 
     else if player's tool is diamond pickaxe:
-        if {joblevel-miner-%player%} >= 10:
+        if {joblevel-miner-{player}} >= 10:
             stop
         else:
             cancel event
             set action bar of player to "&4Vous devez être niveau 10 miner pour utiliser cette pioche."
 
     else if player's tool is netherite pickaxe:
-        if {joblevel-miner-%player%} >= 15:
+        if {joblevel-miner-{player}} >= 15:
             stop
         else:
             cancel event
