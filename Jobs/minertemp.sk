@@ -1,4 +1,4 @@
-aliaces:
+aliases:
     ore = minecraft:stone, minecraft:coal_ore, minecraft:iron_ore, minecraft: gold_ore and minecraft:diamond_ore
 
 on mine of ore:
