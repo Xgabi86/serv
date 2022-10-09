@@ -1,5 +1,5 @@
 aliases:
-    ore = minecraft:stone, minecraft:coal_ore, minecraft:iron_ore, minecraft: gold_ore and minecraft:diamond_ore
+    ore = minecraft:stone, minecraft:coal_ore, minecraft:iron_ore, minecraft:gold_ore, minecraft:diamond_ore
 
 on mine of ore:
     if player's tool is stone pickaxe:
