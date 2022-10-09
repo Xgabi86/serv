@@ -3,36 +3,36 @@ aliaces:
 
 on mine of ore:
     if player's tool is stone pickaxe:
-        if {jobs:%player%:miner} >= 2:
+        if {joblevel-miner-%player%} >= 2:
             stop
         else: 
             cancel event
-            set action of player to "&4Vous devez être niveau 3 miner pour utiliser cette pioche."
+            set action bar of player to "&4Vous devez être niveau 3 miner pour utiliser cette pioche."
 
     else if player's tool is iron pickaxe:
-        if {jobs:%player%:miner} >= 5:
+        if {joblevel-miner-%player%} >= 5:
             stop
         else:
             cancel event
-            set action of player to "&4Vous devez être niveau 5 miner pour utiliser cette pioche."
+            set action bar of player to "&4Vous devez être niveau 5 miner pour utiliser cette pioche."
 
     else if player's tool is golden pickaxe:
-        if {jobs:%player%:miner} >= 7:
+        if {joblevel-miner-%player%} >= 7:
             stop
         else:
             cancel event
-            set action of player to "&4Vous devez être niveau 7 miner pour utiliser cette pioche."
+            set action bar of player to "&4Vous devez être niveau 7 miner pour utiliser cette pioche."
 
     else if player's tool is diamond pickaxe:
-        if {jobs:%player%:miner} >= 10:
+        if {joblevel-miner-%player%} >= 10:
             stop
         else:
             cancel event
-            set action of player to "&4Vous devez être niveau 10 miner pour utiliser cette pioche."
+            set action bar of player to "&4Vous devez être niveau 10 miner pour utiliser cette pioche."
 
     else if player's tool is netherite pickaxe:
-        if {jobs:%player%:miner} >= 15:
+        if {joblevel-miner-%player%} >= 15:
             stop
         else:
             cancel event
-            set action of player to "&4Vous devez être niveau 15 miner pour utiliser cette pioche."
+            set action bar of player to "&4Vous devez être niveau 15 miner pour utiliser cette pioche."
