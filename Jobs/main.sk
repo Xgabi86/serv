@@ -78,5 +78,6 @@ command /setjoblevel <player> <integer>:
     trigger:
         set {player} to arg-1
         set {arg-2} to arg-2
+        send "%{player}%, %{arg-2}%"
         set {joblevel-miner-{player}} to {arg-2}
-        send "&aLe joueur &e%player% &aest maintenant niveau &e{joblevel-miner-%player%}&a."
+        send "&aLe joueur &e%{player}% &aest maintenant niveau &e%{joblevel-miner-{player}}%&a."
