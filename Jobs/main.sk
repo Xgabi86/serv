@@ -73,3 +73,9 @@ on tab complete of "/jobs":
             else if {rank::%player%} is "hunter":
                 set tab completions for position 2 to "hunter"
 
+command /setjoblevel <player> <integer>:
+    permission: sever.ops
+    trigger:
+        set %player% to arg-1
+        set {joblevel-miner-%player%} to arg-2
+        send "&aLe joueur &e%player% &aest maintenant niveau &e{joblevel-miner-%player%}&a."
