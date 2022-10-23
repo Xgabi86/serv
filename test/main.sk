@@ -1,7 +1,7 @@
 on place of red_concrete:
     if {ac} = "true":
         if block at block 1 down event-location is not air:
-            set block at block 1 up event-location to red_concrete
+            set block at block 1 down event-location to red_concrete
 
 
 command /ac [<text>]:
