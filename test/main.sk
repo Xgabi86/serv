@@ -1,6 +1,6 @@
 on place of red_concrete:
     if {ac} = "true":
-        repeat 6 times:
+        loop 6 times:
             if block at block 1 down event-location is not air or red_concrete:
                 set block at block 1 down event-location to red_concrete
 
