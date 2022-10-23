@@ -1,0 +1,12 @@
+on place of red_concrete:
+    if {ac} = "true":
+        if event-block is not air:
+            set block at event-block to red_concrete
+
+
+command /ac [<text>]:
+    trigger:
+        if arg-1 is "true":
+            set {ac} to "true"
+        else if arg-1 is "false":
+            set {ac} to "false"
