@@ -1,6 +1,6 @@
 on place of red_concrete:
     if {ac} = "true":
-        if event-block is not air:
+        if block at 1 down event-location is not air:
             set block at event-block to red_concrete
 
 
