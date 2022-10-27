@@ -17,5 +17,3 @@ jobs:
                  remote_path: '/plugins/Skript/scripts/'
                  sftp_only: true
                  password: ${{ secrets.FTP_PASSWORD }}
-                 
-                 
