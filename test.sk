@@ -1,6 +1,6 @@
 command /testt:
     trigger:
-        set %test% to "10"
+        set %test% to stone_pickaxe
         wait 5 ticks
-        set {test} to placeholder %test%
+        set {test} to %test%
         send "&aCommande executer avec succès ! (%{test}%)"
