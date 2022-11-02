@@ -1,0 +1,6 @@
+command /testt:
+    trigger:
+        set placeholder "test" to "10"
+        wait 5 ticks
+        set {test} to placeholder "test"
+        send "&aCommande executer avec succès ! (%{test}%)"
