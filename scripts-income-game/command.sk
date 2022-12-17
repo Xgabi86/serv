@@ -1,0 +1,284 @@
+command /gm [<text>]:
+    trigger:
+        if arg-1 is "0" or "s":
+            make player execute command "gamemode survival"
+        else if arg-1 is "1" or "c":
+            make player execute command "gamemode creative"
+        else if arg-1 is "2" or "a":
+            make player execute command "gamemode adventure"
+        else if arg-1 is "3" or "sp":
+            make player execute command "gamemode spectator"
+        else:
+            send "Unknown command" to player
+
+command /light:
+    trigger:
+        if {light::*} is false:
+            set {light::*} to true
+            apply potion of night vision of tier 1 to player for 10000 seconds
+            send "&anight vision enabled" to player
+        else:
+            set {light::*} to false
+            execute player command "effect clear %player% night_vision"
+
+command /sign [<text>]:
+    trigger:
+        if arg-1 is "u1":
+            give player oak sign named "&6Upgrade 1" with custom model data 1000
+            send "&aYou have been given the &6&lUpgrade 1 &asign" to player
+        else if arg-1 is "u2":
+            give player oak sign named "&6Upgrade 2" with custom model data 1001
+            send "&aYou have been given the &6&lUpgrade 2 &asign" to player
+        else if arg-1 is "u3":
+            give player oak sign named "&6Upgrade 3" with custom model data 1002
+            send "&aYou have been given the &6&lUpgrade 3 &asign" to player
+        else if arg-1 is "u4":
+            give player oak sign named "&6Upgrade 4" with custom model data 1003
+            send "&aYou have been given the &6&lUpgrade 4 &asign" to player
+        else if arg-1 is "u5":
+            give player oak sign named "&6Upgrade 5" with custom model data 1004
+            send "&aYou have been given the &6&lUpgrade 5 &asign" to player
+        else if arg-1 is "s1":
+            give player oak sign named "&6Spawner 1" with custom model data 1005
+            send "&aYou have been given the &6&lSpawner 1 &asign" to player
+        else if arg-1 is "s2":
+            give player oak sign named "&6Spawner 2" with custom model data 1006
+            send "&aYou have been given the &6&lSpawner 2 &asign" to player
+        else:
+            send "Unknown command" to player
+
+command /debug:
+    trigger:
+        send "player: %{players.online}%" to player
+        send " " to player
+        send "income: %{income}%" to player
+        send " " to player
+        send "money: %{money}%" to player
+
+command /setincome [<number>]:
+    trigger:
+        set {income} to arg-1
+        send "Income: %{income}%" to player
+
+command /setmoney [<number>]:
+    trigger:
+        set {money} to arg-1
+        send "Money: %{money}%$" to player
+
+command /upgradeincome [<number>]:
+    trigger:
+        set {arg1} to arg-1
+        if {arg1} > 0:
+            set {moneytemp} to {arg1} * 20
+            if {money} >= {moneytemp}:
+                set {money} to {money} - {moneytemp}
+                add arg-1 to {income}
+                broadcast "&a%player% has upgraded their income by &6%arg-1%&a!"
+            else:
+                send "&cyou need &6%{moneytemp}%$ &cto upgrade your income by &6%{arg1}%&c!" to player
+        else:
+            send "&cyou need to enter a number greater than 0" to player
+
+command /addincome [<number>]:
+    trigger:
+        set {arg-1} to arg-1
+        add {arg-1} to {income}
+        broadcast "&a%player% has added &6%arg-1%&a to income!"
+
+command /addmoney [<number>]:
+    trigger:
+        set {arg-1-} to arg-1
+        add {arg-1-} to {money}
+        broadcast "&a%player% has added &6%arg-1%$&a to money!"
+
+command /pause:
+    trigger:
+        if {pause} is false:
+            set {pause} to true
+            broadcast "&aGame has been paused"
+        else:
+            set {pause} to false
+            broadcast "&aGame has been unpaused"
+
+command /setspawner [<number>] [<text>]:
+    trigger:
+        if arg-1 is 1:
+            if arg-2 is "true" or "false":
+                set {spawner1} to arg-2
+                send "&aSpawner 1 set to &6%arg-2%" to player
+            else:
+                send "&cyou need to enter true or false" to player
+        else if arg-1 is 2:
+            if arg-2 is "true" or "false":
+                set {spawner2} to arg-2
+                send "&aSpawner 2 set to &6%arg-2%" to player
+            else:
+                send "&cyou need to enter true or false" to player
+        else:
+            send "Unknown command" to player
+
+#------------------------------------------------------------------------------------------
+
+on join:
+    set {players.online} to number of all players
+
+on place of oak sign:
+    if player's held item is oak sign named "&6Upgrade 1":
+        set line 1 of event-block to "&6Upgrade 1"
+        set line 2 of event-block to "&cCost: 20€"
+        set line 3 of event-block to "&2Income: 1€"
+        send "&aSign &6&lU1 &awas created" to player
+    else if player's held item is oak sign named "&6Upgrade 2":
+        set line 1 of event-block to "&6Upgrade 2"
+        set line 2 of event-block to "&cCost: 100€"
+        set line 3 of event-block to "&2Income: 5€"
+        send "&aSign &6&lU2 &awas created" to player
+    else if player's held item is oak sign named "&6Upgrade 3":
+        set line 1 of event-block to "&6Upgrade 3"
+        set line 2 of event-block to "&cCost: 500€"
+        set line 3 of event-block to "&2Income: 25€"
+        send "&aSign &6&lU3 &awas created" to player
+    else if player's held item is oak sign named "&6Upgrade 4":
+        set line 1 of event-block to "&6Upgrade 4"
+        set line 2 of event-block to "&cCost: 2500€"
+        set line 3 of event-block to "&2Income: 125€"
+        send "&aSign &6&lU4 &awas created" to player
+    else if player's held item is oak sign named "&6Upgrade 5":
+        set line 1 of event-block to "&6Upgrade 5"
+        set line 2 of event-block to "&cCost: 10000€"
+        set line 3 of event-block to "&2Income: 625€"
+        send "&aSign &6&lU5 &awas created" to player
+    else if player's held item is oak sign named "&6Spawner 1":
+        set line 1 of event-block to "&6Spawner 1"
+        set line 2 of event-block to "&cCost: 200€"
+        set line 3 of event-block to "&2Drop: 5€"
+        send "&aSign &6&lS1 &awas created" to player
+    else if player's held item is oak sign named "&6Spawner 2":
+        set line 1 of event-block to "&6Spawner 2"
+        set line 2 of event-block to "&cCost: 1000€"
+        set line 3 of event-block to "&2Drop: 25€"
+        send "&aSign &6&lS2 &awas created" to player
+    else:
+        send "&cUnknown sign" to player
+
+on rightclick on oak sign:
+    if line 1 of clicked block is "&6Upgrade 1":
+        if {money} >= 20:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            add 1 to {income}
+            remove 20 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Upgrade 2":
+        if {money} >= 100:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            add 5 to {income}
+            remove 100 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Upgrade 3":
+        if {money} >= 500:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            add 25 to {income}
+            remove 500 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Upgrade 4":
+        if {money} >= 2500:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            add 125 to {income}
+            remove 2500 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Upgrade 5":
+        if {money} >= 10000:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            add 625 to {income}
+            remove 10000 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Spawner 1":
+        if {money} >= 200:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            set {spawner1} to true
+            remove 200 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else if line 1 of clicked block is "&6Spawner 2":
+        if {money} >= 1000:
+            set action bar of player to "&6You buy a new upgrade"
+            play sound "entity.player.levelup" with volume 100 and pitch 1 at player
+            set {spawner2} to true
+            remove 1000 from {money}
+        else:
+            set action bar of player to "&cYou don't have enough money"
+    else:
+        send "&cUnknown sign" to player
+            
+every seconds:
+    if {pause} = false:
+        add {income} to {money}
+        loop all players:
+            wipe loop-player's sidebar
+            set name of sidebar of loop-player to "&cStats"
+            loop 10 times:
+                set score " " in sidebar of loop-player to 4
+                set score "&eMoney: &l%{money}%$" in sidebar of loop-player to 3
+                set score "&6Income: &l%{income}%" in sidebar of loop-player to 2
+                set score "&cPlayer: &l%{players.online}%" in sidebar of loop-player to 1
+        if {money} < 20:
+            if {income} = 0:
+                set {money} to 20
+        if {income} < 0:
+            set {income} to 0
+        if {money} < 0:
+            set {money} to 0
+    else if {pause} = true:
+        loop all players:
+            set action bar of loop-player to "&4Server is paused"
+    loop all players:
+        if loop-player's inventory contains gold nugget named "&e5$" with custom model data 1312:
+            add 5 to {money}
+            remove 1 gold nugget named "&e5$" from loop-player's inventory
+            set action bar of loop-player to "&aYou have received &65$&a"
+        else if loop-player's inventory contains gold nugget named "&e25$" with custom model data 1313:
+            add 25 to {money}
+            remove 1 gold nugget named "&e25$" from loop-player's inventory
+            set action bar of loop-player to "&aYou have received &625$&a"
+    if {spawner1} = true:
+        if {spawner1_time} <= 0:
+            if {chicken} = false:
+                set {spawner1_time} to 10
+                summon chicken at {spawner}
+                set {chicken} to true
+        else:
+            set {spawner1_time} to {spawner1_time} - 1
+    if {spawner2} = true:
+        if {spawner2_time} <= 0:
+            if {pig} = false:
+                set {spawner2_time} to 10
+                summon pig at {spawner}
+                set {pig} to true
+        else:
+            set {spawner2_time} to {spawner2_time} - 1
+
+on death of chicken:
+    if attacker is a player:
+        clear drops
+        drop 1 of gold nugget named "&e5$" with custom model data 1312 at victim's location
+        set {chicken} to false
+
+on death of pig:
+    if attacker is a player:
+        clear drops
+        drop 1 of gold nugget named "&e25$" with custom model data 1313 at victim's location
+        set {pig} to false
+
+#---Idée---
+#
